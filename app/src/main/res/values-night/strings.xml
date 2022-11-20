@@ -1,6 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">WhatsApp Direct Message Sender</string>
-    <string name="enter_number">Enter number</string>
     <string name="enter_details">Enter Details</string>
     <string name="type_your_message">Type your Message</string>
     <string name="reset">Reset</string>

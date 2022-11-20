@@ -1,5 +1,6 @@
 package com.is.whatsappdirectmessaagesender;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -17,6 +18,11 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.hbb20.CountryCodePicker;
 
@@ -27,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     Button sendbtn, btnReset;
     String messagestr, phonestr = "";
     LinearLayout ly;
+    private AdView mAdView,mAdView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,23 @@ public class MainActivity extends AppCompatActivity {
         sendbtn = findViewById(R.id.sendbtn);
         btnReset = findViewById(R.id.btn_reset);
 
+        //Showing ads to the apps
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+
+
+            }
+        });
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        //Adview 2
+
+        mAdView2 = findViewById(R.id.adView2);
+        AdRequest adRequest2 = new AdRequest.Builder().build();
+        mAdView2.loadAd(adRequest2);
+        //Check if night mode is enabled or not.
         if (isNightMode(MainActivity.this)){
             countryCodePicker.setContentColor(Color.WHITE);
             countryCodePicker.setArrowColor(Color.WHITE);
