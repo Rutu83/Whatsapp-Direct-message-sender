@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         ads:adSize="BANNER"
-        ads:adUnitId="" />
+        ads:adUnitId="ca-app-pub-1606159061442246/2005545413" />
     <!-- pub id has been changed -->
 
 
@@ -147,7 +147,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             ads:adSize="BANNER"
-            ads:adUnitId="" />
+            android:visibility="visible"
+            ads:adUnitId="ca-app-pub-1606159061442246/3641721402" />
         <!-- pub id has been changed -->
     </LinearLayout>
 </LinearLayout>
